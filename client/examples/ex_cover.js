@@ -1,19 +1,17 @@
-// BlazeLayout.setRoot('body');
-FlowRouter.route('/',{
+FlowRouter.route('/ex_cover', {
   action: function() {
-    BlazeLayout.render('main');
+    BlazeLayout.render('ex_cover');
   }
 })
 
-
-Template.main.onRendered(function() {
+Template.ex_cover.onRendered(function() {
   $('html').css('height', '100%');
   $('body').css('height', '100%');
   $('#__blaze-root').css('height', '100%');
 });
 
-Template.main.onDestroyed(function() {
+Template.ex_cover.onDestroyed(function() {
   $('html').css('height', '');
   $('body').css('height', '');
   $('#__blaze-root').css('height', '');
-})
+});
