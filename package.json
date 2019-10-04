@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
-    "meteor-node-stubs": "^0.4.1"
+    "atob": "^2.1.2",
+    "cheerio": "^1.0.0-rc.3",
+    "gridfs-stream": "^1.1.1",
+    "meteor-node-stubs": "^0.4.1",
+    "moment": "^2.24.0"
   },
   "meteor": {
     "mainModule": {},
