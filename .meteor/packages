@@ -23,3 +23,9 @@ coffeescript
 kadira:flow-router
 kadira:blaze-layout
 less
+ostrio:files
+accounts-password
+accounts-ui
+email
+check
+underscore

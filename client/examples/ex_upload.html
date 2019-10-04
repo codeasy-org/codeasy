@@ -1,0 +1,54 @@
+
+<template name="ex_upload">
+  <div id="ex_upload">
+    {{> ex_navbar}}
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="">File Upload Example</h1>
+        <!--        <p class="lead text-muted">Something short and leading about the collection-->
+        <!--          below—its contents, the creator, etc. Make it short and sweet, but not too-->
+        <!--          short so folks don’t simply skip over it entirely.</p>-->
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input id="inp-file" type="file" class="custom-file-input">
+            <label id="lb-file" class="custom-file-label">Choose file</label>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <textarea id="ta-article" rows="5" type="text" class="form-control" placeholder="Write your story"></textarea>
+        </div>
+
+        <p>
+          <a id="btn-save" href="#" class="btn btn-primary">Add Content</a>
+          <a href="#" class="btn btn-secondary">Secondary action</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="">
+      <div class="container">
+        <div class="row">
+          <!--    DB_CONTENTS를 파라미터로 전달 받는 반복문     -->
+          {{#each contents}}
+            <div class="col-md-4">
+              <div class="mb-4 shadow-sm">
+                <img src="{{link}}" alt="" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text">{{content}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">{{createdAt}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{> ex_footer}}
+  </div>
+</template>
