@@ -128,6 +128,7 @@
                 <select class="custom-select d-block w-100" id="state" required>
                   <option value="">Choose...</option>
                   <option>California</option>
+                  <option>Seoul</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid state.
@@ -202,10 +203,24 @@
               </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <button id="btn-submit" class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
           </form>
         </div>
       </div>
+      <table>
+        <tr>
+          <td>firstName</td>
+          <td>credit</td>
+          <td>createdAt</td>
+        </tr>
+        {{#each resumes}}
+          <tr>
+            <td>{{firstName}}</td>
+            <td>{{credit}}</td>
+            <td>{{createdAt}}</td>
+          </tr>
+        {{/each}}
+      </table>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2017-2019 Company Name</p>

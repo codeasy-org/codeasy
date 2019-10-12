@@ -5,6 +5,22 @@ FlowRouter.route('/ex_upload', {
 })
 
 Template.ex_upload.helpers({
+  isAdmin: function() {
+    var user = Meteor.user();
+    if(user.profile.isAdmin === true) return true
+    else return false;
+  },
+  isLogin: function() {
+    var user = Meteor.user();
+    // if user has address?
+    //   return true;
+    // else return false;
+    if (user.hasOwnProperty('profile')) {
+      return true;
+    }
+    else return false;
+
+  },
   contents: function() {
     //CONTENTS 데이터베이스를 화면에 전달
     return DB_CONTENTS.find();
@@ -20,6 +36,21 @@ Template.ex_upload.helpers({
 })
 
 Template.ex_upload.events({
+  'click #btn-address': function() {
+    var address = $('#ta-article').val();
+    // var user = Meteor.user();
+    Meteor.users.update({_id: Meteor.user()._id}, {
+      $set:
+        {
+          'profile.address': address,
+          'profile.name': 'name'
+
+        }
+    });
+  },
+  'click #resume-detail': function() {
+
+  },
   'click #btn-save': function(evt, inst) {
     //파일과 켄텐츠 저장
     var file = $('#inp-file').prop('files')[0];   //화면에서 선택 된 파일 가져오기

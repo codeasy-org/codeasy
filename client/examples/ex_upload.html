@@ -2,6 +2,12 @@
 <template name="ex_upload">
   {{> ex_navbar}}
   <div id="ex_upload">
+    {{#if isAdmin}}
+      I'm admin
+    {{else}}
+      I'm not admin
+    {{/if}}
+    {{#if isLogin}}
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="">File Upload Example</h1>
@@ -20,16 +26,18 @@
 
         <p>
           <a id="btn-save" href="#" class="btn btn-primary">Add Content</a>
-          <a href="#" class="btn btn-secondary">Secondary action</a>
+          <a id="btn-address" href="#" class="btn btn-secondary">Update Address</a>
         </p>
       </div>
     </section>
+    {{/if}}
 
     <div class="container">
       <div class="row">
         <!--    DB_CONTENTS를 파라미터로 전달 받는 반복문     -->
         {{#each contents}}
           <div class="col-md-4">
+            <a href="/test/{{_id}}">
             <div class="mb-4 shadow-sm">
               <img src="{{link}}" alt="" class="card-img-top">
               <button id="btn-remove" type="button" class="close" aria-label="Close">
@@ -46,6 +54,7 @@
                 </div>
               </div>
             </div>
+            </a>
           </div>
         {{/each}}
       </div>
