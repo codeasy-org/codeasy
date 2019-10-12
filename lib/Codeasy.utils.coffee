@@ -153,7 +153,7 @@ unless @Codeasy then @Codeasy = {}
   return
     link of file
 ###
-    return "#{Meteor.absoluteUrl()}/cdn/storage/files/#{_id}/original/#filename"
+    return "#{Meteor.absoluteUrl()}cdn/storage/db_files/#{_id}/original/#filename"
 
   getGroup_ids: (userInfo) ->
 #admin / company / center 의 userInfo를 넘기면 하위의 gruop_ids를 찾아서 [] return

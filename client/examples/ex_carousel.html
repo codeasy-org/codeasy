@@ -1,6 +1,6 @@
 <template name="ex_carousel">
+  {{> ex_navbar}}
   <div id="ex_carousel">
-    {{> ex_navbar}}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -118,13 +118,7 @@
           <img src="/images/samples/0004.jpeg" alt="" class="img-fluid mx-auto" width="500" height="500">
         </div>
       </div>
-
-      <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
-
-
-    <!-- FOOTER -->
-    {{> ex_footer}}
+    </div>
   </div>
+  {{> ex_footer}}
 </template>

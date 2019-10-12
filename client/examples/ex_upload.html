@@ -1,7 +1,7 @@
 
 <template name="ex_upload">
+  {{> ex_navbar}}
   <div id="ex_upload">
-    {{> ex_navbar}}
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="">File Upload Example</h1>
@@ -25,30 +25,28 @@
       </div>
     </section>
 
-    <div class="">
-      <div class="container">
-        <div class="row">
-          <!--    DB_CONTENTS를 파라미터로 전달 받는 반복문     -->
-          {{#each contents}}
-            <div class="col-md-4">
-              <div class="mb-4 shadow-sm">
-                <img src="{{link}}" alt="" class="card-img-top">
-                <div class="card-body">
-                  <p class="card-text">{{content}}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">{{createdAt}}</small>
+    <div class="container">
+      <div class="row">
+        <!--    DB_CONTENTS를 파라미터로 전달 받는 반복문     -->
+        {{#each contents}}
+          <div class="col-md-4">
+            <div class="mb-4 shadow-sm">
+              <img src="{{link}}" alt="" class="card-img-top">
+              <div class="card-body">
+                <p class="card-text">{{{content}}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                   </div>
+                  <small class="text-muted">{{createdAt}}</small>
                 </div>
               </div>
             </div>
-          {{/each}}
-        </div>
+          </div>
+        {{/each}}
       </div>
     </div>
-    {{> ex_footer}}
   </div>
+  {{> ex_footer}}
 </template>
