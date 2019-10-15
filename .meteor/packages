@@ -29,3 +29,5 @@ accounts-ui
 email
 check
 underscore
+http
+cfs:http-methods

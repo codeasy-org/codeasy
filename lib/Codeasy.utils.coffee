@@ -55,9 +55,9 @@ serverLog = ->
 
 @cl = (msg) ->
   if Meteor.isClient
-    return msg
-#    console.log msg
-#    Meteor.call 'console.log', msg
+#    return msg
+    console.log msg
+    Meteor.call 'console.log', msg
   else
 #    Meteor.call 'console.log', msg
     serverLog msg

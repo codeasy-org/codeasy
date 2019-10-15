@@ -35,10 +35,6 @@ Template.ex_upload.events({
         name: db_file.config.file.name  //위 저장 저장 파일명
       }
     });
-
-    Meteor.setTimeout(function() {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
-      location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
-    }, 1000);
   },
   'click #btn-remove': function() {
     DB_CONTENTS.remove({_id: this._id});  //선택 컨텐츠를 DB에서 삭제
