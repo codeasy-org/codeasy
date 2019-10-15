@@ -2,7 +2,7 @@ FlowRouter.route('/ex_cover', {
   action: function() {
     BlazeLayout.render('ex_cover');
   }
-})
+});
 
 Template.ex_cover.onRendered(function() {
   $('html').css('height', '100%');

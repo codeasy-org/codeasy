@@ -1,0 +1,22 @@
+<template name="ex_login_custom">
+  <div id="ex_login_custom" class="text-center">
+    <div class="form">
+      <a href="/"><img class="mb-4" src="/images/samples/logo.png" alt="" width="80" height="72"></a>
+      {{#if currentUser}}
+        <h1 class="h3 mb-3 font-weight-normal">{{email}}</h1>
+        <button id="btn-logout" class="btn btn-lg btn-primary btn-block">Sign out</button>
+      {{else}}
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button id="btn-login" class="btn btn-lg btn-primary btn-block">Sign in</button>
+      {{/if}}
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+    </div>
+  </div>
+</template>

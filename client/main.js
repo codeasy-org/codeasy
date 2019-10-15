@@ -3,7 +3,7 @@ FlowRouter.route('/',{
   action: function() {
     BlazeLayout.render('main');
   }
-})
+});
 
 
 Template.main.onRendered(function() {
@@ -16,4 +16,4 @@ Template.main.onDestroyed(function() {
   $('html').css('height', '');
   $('body').css('height', '');
   $('#__blaze-root').css('height', '');
-})
+});

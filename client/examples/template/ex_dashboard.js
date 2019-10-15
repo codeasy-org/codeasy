@@ -2,7 +2,7 @@ FlowRouter.route('/ex_dashboard', {
   action: function() {
     BlazeLayout.render('ex_dashboard');
   }
-})
+});
 
 Template.ex_dashboard.onRendered(function() {
   run = function () {

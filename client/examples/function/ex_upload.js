@@ -2,7 +2,7 @@ FlowRouter.route('/ex_upload', {
   action: function() {
     BlazeLayout.render('ex_upload');
   }
-})
+});
 
 Template.ex_upload.helpers({
   contents: function() {
@@ -17,7 +17,7 @@ Template.ex_upload.helpers({
     // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
     return Codeasy.utils.getFileLink(this.file._id)
   }
-})
+});
 
 Template.ex_upload.events({
   'click #btn-save': function(evt, inst) {
@@ -48,4 +48,4 @@ Template.ex_upload.events({
     var file = $('#inp-file').prop('files')[0];
     $('#lb-file').text(file.name);
   }
-})
+});

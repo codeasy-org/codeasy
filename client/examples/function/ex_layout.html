@@ -1,0 +1,13 @@
+<template name="ex_layout">
+    {{> ex_navbar}}
+    {{> Template.dynamic template=name}}
+    {{> ex_footer}}
+</template>
+
+<template name="ex_layout_subpage">
+  <div id="ex_layout_subpage">
+    <br><br><br><br><br><br><br><br><br>
+    <h1>URL 호출에 따라 ex_layout 템플릿의 dynamic 부분만 변경되어 화면에 나타납니다.</h1>
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+</template>
