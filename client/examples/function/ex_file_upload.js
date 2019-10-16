@@ -1,10 +1,10 @@
-FlowRouter.route('/ex_upload', {
+FlowRouter.route('/ex_file_upload', {
   action: function() {
-    BlazeLayout.render('ex_upload');
+    BlazeLayout.render('ex_file_upload');
   }
 });
 
-Template.ex_upload.helpers({
+Template.ex_file_upload.helpers({
   contents: function() {
     //CONTENTS 데이터베이스를 화면에 전달
     return DB.find({db_name: 'ex_content'});
@@ -19,7 +19,7 @@ Template.ex_upload.helpers({
   }
 });
 
-Template.ex_upload.events({
+Template.ex_file_upload.events({
   'click #btn-save': function(evt, inst) {
     //파일 먼저 저장
     var file = $('#inp-file').prop('files')[0];   //화면에서 선택 된 파일 가져오기
