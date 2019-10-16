@@ -14,7 +14,7 @@ Template.ex_file_upload.helpers({
     return Utils.getStringYMDFromDate(this.createdAt);
   },
   link: function() {
-    //파일 _id를 이용 해 파일 링크를 획득 및 리턴
+    //저장 된 이미지 링크를 반환
     return DB_FILES.findOne({_id: this.file._id}).link();
   }
 });
@@ -26,7 +26,6 @@ Template.ex_file_upload.events({
     var fileInfo = DB_FILES.insert({   //파일 DB에 미리 저장
       file: file
     });
-
     //컨텐츠 저장 시 파일의 _id와 name을 함께 저장
     DB.insert({    //컨텐츠 DB에 저장
       db_name: 'ex_content',       //DB 명
@@ -42,7 +41,7 @@ Template.ex_file_upload.events({
     DB.remove({_id: this._id});  //선택 컨텐츠를 DB에서 삭제
   },
   'change #inp-file': function(evt, inst) {
-    //inp-file에서 파일을 선택 시 파일명을 input 라벨에 표시
+    //inp-file에서 파일을 선택 시 파일명을 input 라벨에 표시하는 기능
     var file = $('#inp-file').prop('files')[0];
     $('#lb-file').text(file.name);
   }
