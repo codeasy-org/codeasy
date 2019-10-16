@@ -145,7 +145,7 @@ Date.prototype.clone = -> return new Date @getTime()
 
 unless @Codeasy then @Codeasy = {}
 
-@Codeasy.utils =
+@Utils =
   getFileLink: (_id) ->
 ###
   param
@@ -153,7 +153,8 @@ unless @Codeasy then @Codeasy = {}
   return
     link of file
 ###
-    return "#{Meteor.absoluteUrl()}cdn/storage/db_files/#{_id}/original/#filename"
+    if _id? then return "#{Meteor.absoluteUrl()}cdn/storage/db_files/#{_id}/original/#{_id}"
+    else return "/images/samples/logo.png"
 
   getGroup_ids: (userInfo) ->
 #admin / company / center 의 userInfo를 넘기면 하위의 gruop_ids를 찾아서 [] return
@@ -376,7 +377,6 @@ unless @Codeasy then @Codeasy = {}
       return interval + ' mins'
     return Math.floor(seconds) + ' seconds'
 
-# 2018.04.26 황준연
 # 데이트 포멧으로 인자를 전달해야 함.
 # 시작에서 종료시간까지 소요된 시간을 'hh:mm:ss' 문자열로 출력
   consumedTime: (startTime, endTime) ->
@@ -437,7 +437,7 @@ unless @Codeasy then @Codeasy = {}
     return event.preventDefault()
 
 if Meteor.isClient
-  _.extend @Codeasy.utils,
+  _.extend @Utils,
     getCurrrentPath: ->
       c = window.location.pathname
       b = c.slice 0, -1
