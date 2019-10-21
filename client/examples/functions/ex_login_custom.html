@@ -1,0 +1,50 @@
+<template name="ex_login_custom">
+  <div id="ex_login_custom" class="text-center">
+    <div class="form">
+      <a href="/"><img class="mb-4" src="/images/samples/logo.png" alt="" width="80" height="72"></a>
+      {{#if currentUser}}
+        {{#with userInfo}}
+          <h1 class="h3 mb-3 font-weight-normal">{{email}} <br> has been logged in.</h1>
+          <div class="input-group mb-1">
+            <input id="inp-name" type="text" class="form-control" placeholder="Name" value="{{profile.name}}">
+          </div>
+          <div class="input-group mb-1">
+            <input id="inp-address" type="text" class="form-control" placeholder="Address" value="{{profile.address}}">
+          </div>
+          <div class="input-group mb-1">
+            <input id="inp-mobile" type="text" class="form-control" placeholder="Phone" value="{{profile.mobile}}">
+          </div>
+        {{/with}}
+        <button id="btn-update-profile" class="btn btn-outline-primary btn-lg btn-block mb-1">Update Profile</button>
+        <button id="btn-logout" class="btn btn-lg btn-primary btn-block">Sign out</button>
+      {{else}}
+        {{#if isSignUpMode}}  <!-- 회원가입모드 일 경우 -->
+          <h1 class="h3 mb-3 font-weight-normal">Please sign Up</h1>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <input type="password" id="inp-password" class="form-control" placeholder="Password" required>
+          <input type="password" id="inp-passwordConfirm" class="form-control" placeholder="Password" required>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button id="btn-signUp" class="btn btn-lg btn-outline-dark btn-block">Sign Up</button>
+          <button id="btn-back" class="btn btn-lg btn-primary btn-block">Back</button>
+        {{else}} <!-- 회원가입모드가 아닐 경우 -->
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <input type="password" id="inp-password" class="form-control" placeholder="Password" required>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button id="btn-signIn" class="btn btn-lg btn-outline-primary btn-block">Sign in</button>
+          <button id="btn-signUpMode" class="btn btn-lg btn-primary btn-block">Sign Up</button>
+        {{/if}}
+
+      {{/if}}
+      <p class="mt-5 mb-3 text-muted">&copy; Since 2019</p>
+    </div>
+  </div>
+</template>

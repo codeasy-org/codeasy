@@ -31,3 +31,4 @@ check
 underscore
 http
 cfs:http-methods
+session
