@@ -18,7 +18,7 @@ Template.ex_login_navbar.events({
     var mobile = $('#inp-mobile').val();
 
     Meteor.users.update({_id: userInfo._id}, {
-      $set: {
+      $set: { // 사용자 객체의 profile 프로퍼티는 사용자 기타 정보를 저장 하는 공통 된 위치 입니다.
         'profile.name': name,
         'profile.address': address,
         'profile.mobile': mobile
