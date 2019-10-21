@@ -1,1 +1,1 @@
-DB = new Mongo.Collection('db_example'); //예제와 테스트를 위한 데이터베이스
+// DB_EXAMPLE = new Mongo.Collection('db_example'); //몽고DB 콜렉션 생성 예제
