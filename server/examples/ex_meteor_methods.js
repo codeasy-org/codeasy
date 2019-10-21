@@ -9,8 +9,7 @@ Meteor.methods({
   'getDB': function(db_name) {
     // 필요한 서버 작업을 수행 후 원하는 값을 return
     return DB.finds({db_name: db_name}); // DB에서 db_name에 일치하는 값의 Array 반환
-  },
-  // 'getUsers': function()
+  }
 });
 
 // Meteor Methods 호출 예제
