@@ -1,7 +1,7 @@
 moment = require('moment')
 
 if Meteor.isServer
-  @syncCall = Meteor.wrapAsync(Meteor.call, Meteor)
+  Meteor.callSync = Meteor.wrapAsync(Meteor.call, Meteor) # only available on server side.
   @CollectionError = new Mongo.Collection 'error' #Collection for error logging
 
   Meteor.methods
@@ -45,13 +45,13 @@ Object.defineProperty global, '__function', get: ->
 
 serverLog = ->
   nFs = Npm.require('fs')
-  logFileNm = (new moment(new Date())).format('YYYYMMDD') + '_TALKSPACE.log'
+  logFileNm = (new moment(new Date())).format('YYYYMMDD') + '.log'
   for logKey of Object.keys(arguments)
     logDt = (new moment(new Date())).format('YYYY-MM-DD HH:mm:ss') + " "
     if typeof(arguments[logKey]) is 'object'
-      nFs.writeFile process.env.dailyLogPath + logFileNm, logDt + JSON.stringify(arguments[logKey], Object.getOwnPropertyNames(arguments[logKey])) + '\n', flag:'a', (err) ->
+      nFs.writeFile "#{process.env.PWD}/.meteor/#{logFileNm}", logDt + JSON.stringify(arguments[logKey], Object.getOwnPropertyNames(arguments[logKey])) + '\n', flag:'a', (err) ->
     else
-      nFs.writeFile process.env.dailyLogPath + logFileNm, logDt + arguments[logKey] + '\n', flag:'a', (err) -> return
+      nFs.writeFile "#{process.env.PWD}/.meteor/#{logFileNm}", logDt + arguments[logKey] + '\n', flag:'a', (err) -> return
 
 @cl = (msg) ->
   if Meteor.isClient
@@ -59,7 +59,7 @@ serverLog = ->
     console.log msg
     Meteor.call 'console.log', msg
   else
-#    Meteor.call 'console.log', msg
+    Meteor.call 'console.log', msg
     serverLog msg
     return msg
 
@@ -145,7 +145,7 @@ Date.prototype.clone = -> return new Date @getTime()
 
 unless @Codeasy then @Codeasy = {}
 
-@Utils =
+@Codeasy.utils =
   getFileLink: (_id) ->
 ###
   param
@@ -437,7 +437,7 @@ unless @Codeasy then @Codeasy = {}
     return event.preventDefault()
 
 if Meteor.isClient
-  _.extend @Utils,
+  _.extend @Codeasy.utils,
     getCurrrentPath: ->
       c = window.location.pathname
       b = c.slice 0, -1

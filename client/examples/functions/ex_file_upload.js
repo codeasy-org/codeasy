@@ -11,7 +11,7 @@ Template.ex_file_upload.helpers({
   },
   createdAt: function() {
     //화면에 보이는 날짜 데이터를 정해진 포맷으로 변환하여 전달
-    return Utils.getStringYMDFromDate(this.createdAt);
+    return Codeasy.utils.getStringYMDFromDate(this.createdAt);
   },
   link: function() {
     //저장 된 이미지 링크를 반환
