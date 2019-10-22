@@ -1,4 +1,4 @@
-moment = require('moment')
+moment = require('moment/moment')
 
 if Meteor.isServer
   Meteor.callSync = Meteor.wrapAsync(Meteor.call, Meteor) # only available on server side.
