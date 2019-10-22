@@ -15,7 +15,7 @@ Template.ex_file_upload.helpers({
   },
   link: function() {
     //저장 된 이미지 링크를 반환
-    return DB_FILES.findOne({_id: this.file._id}).link();
+    return DB_FILES.findOne({_id: this.file_id}).link();
   }
 });
 
@@ -23,18 +23,13 @@ Template.ex_file_upload.events({
   'click #btn-save': function(evt, inst) {
     //파일 먼저 저장
     var file = $('#inp-file').prop('files')[0];   //화면에서 선택 된 파일 가져오기
-    var fileInfo = DB_FILES.insert({   //파일 DB에 미리 저장
-      file: file
-    });
+    var file_id = DB_FILES.insertFile(file);
     //컨텐츠 저장 시 파일의 _id와 name을 함께 저장
     DB.insert({    //컨텐츠 DB에 저장
       db_name: 'ex_content',       //DB 명
       createdAt: new Date(),          //저장 시각
       content: $('#ta-article').val(),//저장 컨텐츠
-      file: {
-        _id: fileInfo.config.fileId,     //저장 된 파일의_id
-        name: fileInfo.config.file.name  //저장 된 파일명
-      }
+      file_id: file_id
     });
   },
   'click #btn-remove': function() {

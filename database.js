@@ -1,1 +1,0 @@
-// DB_EXAMPLE = new Mongo.Collection('db_example'); //몽고DB 콜렉션 생성 예제

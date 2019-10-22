@@ -1,27 +1,24 @@
 <template name="ex_login_navbar">
   <div id="ex_login_navbar">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-right">
+      <a href="/codeasy"><img src="/images/samples/logo.png" alt="" class="nav-logo" style="max-height: 40px;"></a>
+      <a href="/codeasy" class="navbar-brand">Codeasy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a href="/codeasy"><img src="/images/samples/logo.png" alt="" class="nav-logo" style="max-height: 40px;"></a>
+          <li class="nav-item active">
+            <a class="nav-link" href="/codeasy">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/codeasy">Home</a>
-          </li>
-        </ul>
-      </div>
-      <div class="ml-auto order-0">
-        <a class="navbar-brand ml-auto" href="/codeasy">Codeasy</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu">
@@ -38,6 +35,7 @@
         </ul>
       </div>
     </nav>
+
     <section class="jumbotron text-center">
       {{#if currentUser}}
         <div class="container">
@@ -50,19 +48,19 @@
               <div class="col-lg-6 col-md-8 col-sm-10">
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">이름</span>
+                    <span class="input-group-text" id="basic-addon1">Username</span>
                   </div>
-                  <input id="inp-name" type="text" class="form-control" placeholder="ex> John Doe" value="{{profile.name}}">
+                  <input id="inp-name" type="text" class="form-control" placeholder="ex> John Doe" value="{{username}}">
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">주소</span>
+                    <span class="input-group-text" id="basic-addon1">Address</span>
                   </div>
                   <input id="inp-address" type="text" class="form-control" placeholder="ex> 123 Street, Seoul, Korea" value="{{profile.address}}">
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">전화</span>
+                    <span class="input-group-text" id="basic-addon1">Phone</span>
                   </div>
                   <input id="inp-mobile" type="text" class="form-control" placeholder="ex> 010-1234-5678" value="{{profile.mobile}}">
                 </div>

@@ -43,24 +43,15 @@ Object.defineProperty global, '__function', get: ->
 
 @isTestMode = do -> if process?.env?.IS_TEST_MODE is 'true' then true else false
 
-serverLog = ->
-  nFs = Npm.require('fs')
-  logFileNm = (new moment(new Date())).format('YYYYMMDD') + '.log'
-  for logKey of Object.keys(arguments)
-    logDt = (new moment(new Date())).format('YYYY-MM-DD HH:mm:ss') + " "
-    if typeof(arguments[logKey]) is 'object'
-      nFs.writeFile "#{process.env.PWD}/.meteor/#{logFileNm}", logDt + JSON.stringify(arguments[logKey], Object.getOwnPropertyNames(arguments[logKey])) + '\n', flag:'a', (err) ->
-    else
-      nFs.writeFile "#{process.env.PWD}/.meteor/#{logFileNm}", logDt + arguments[logKey] + '\n', flag:'a', (err) -> return
 
 @cl = (msg) ->
   if Meteor.isClient
 #    return msg
     console.log msg
-    Meteor.call 'console.log', msg
+    try Meteor.call 'console.log', msg catch err #send server if possible
   else
-    Meteor.call 'console.log', msg
-    serverLog msg
+    console.log msg
+#    Codeasy.utils.serverLog msg
     return msg
 
 # Date prototyping
@@ -451,3 +442,15 @@ if Meteor.isClient
         return 'i'
       if navigator.userAgent.match(/Android/i)
         return 'a'
+else
+  _.extend @Codeasy.utils,
+    serverLog: ->
+      console.log('run')
+      nFs = Npm.require('fs')
+      logFileNm = (new moment(new Date())).format('YYYYMMDD') + '.log'
+      for logKey of Object.keys(arguments)
+        logDt = (new moment(new Date())).format('YYYY-MM-DD HH:mm:ss') + " "
+        if typeof(arguments[logKey]) is 'object'
+          nFs.writeFile "#{process.env.PWD}/.meteor/#{logFileNm}", logDt + JSON.stringify(arguments[logKey], Object.getOwnPropertyNames(arguments[logKey])) + '\n', flag:'a', (err) ->
+        else
+          nFs.writeFile "#{process.env.PWD}/.meteor/#{logFileNm}", logDt + arguments[logKey] + '\n', flag:'a', (err) -> return
