@@ -4,4 +4,6 @@ Meteor.startup(function() {
 
   //ㅑㄷ저럊덜ㄷ쟈럳
 
+  //방법1로 테스트를 구현
+
 });
