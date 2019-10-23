@@ -4,6 +4,6 @@ Meteor.startup(function() {
 
   //ㅑㄷ저럊덜ㄷ쟈럳
 
-  //방법2 테스트
+  //방법3 수정
 
 });
