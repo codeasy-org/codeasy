@@ -1,4 +1,3 @@
-// BlazeLayout.setRoot('body');
 FlowRouter.route('/codeasy',{
   action: function() {
     BlazeLayout.render('codeasy');

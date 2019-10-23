@@ -38,10 +38,5 @@ Template.ex_file_upload.events({
   },
   'click #btn-remove': function() {
     DB.remove({_id: this._id});  // 선택 컨텐츠를 DB에서 삭제
-  },
-  'change #inp-file': function(evt, inst) {
-    // inp-file에서 파일을 선택 시 파일명을 input 라벨에 표시하는 기능
-    var file = $('#inp-file').prop('files')[0];
-    $('#lb-file').text(file.name);
   }
 });
