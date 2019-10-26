@@ -24,7 +24,7 @@ Meteor.methods({
         }
       });
     */
-    return DB('example').finds({db_name: db_name}); // DB에서 db_name에 일치하는 값의 Array 반환
+    return DB('example').findAll({db_name: db_name}); // DB에서 db_name에 일치하는 값의 Array 반환
   }
 });
 

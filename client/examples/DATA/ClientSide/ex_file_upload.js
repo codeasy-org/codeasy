@@ -7,7 +7,7 @@ FlowRouter.route('/ex_file_upload', {
 Template.ex_file_upload.helpers({
   contents: function() {
     // CONTENTS 데이터베이스를 화면에 전달
-    return DB.finds({db_name: 'ex_file_upload'});
+    return DB.findAll({db_name: 'ex_file_upload'});
   },
   createdAt: function() {
     // 화면에 보이는 날짜 데이터를 정해진 포맷으로 변환하여 전달
