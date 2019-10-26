@@ -1,4 +1,4 @@
-FlowRouter.template('ex_login_navbar');
+FlowRouter.template('/ex_login_navbar');
 
 Template.ex_login_navbar.helpers({
   userInfo: function() {

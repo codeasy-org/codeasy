@@ -1,4 +1,4 @@
-FlowRouter.template('ex_dashboard');
+FlowRouter.template('/ex_dashboard');
 
 Template.ex_dashboard.onRendered(function() {
   run = function () {

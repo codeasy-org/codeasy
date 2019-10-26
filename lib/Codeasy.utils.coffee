@@ -79,6 +79,30 @@ Object.defineProperty global, '__function', get: ->
   @setMonth @getMonth() + (years*12)
   @setDate Math.min(n, @getDaysInMonth())
   return @
+@Date.prototype.toStringYM = ->
+  return moment(this).format('YYYY-MM')
+@Date.prototype.toStringYM = ->
+  return moment(this).format('YYYY-MM')
+@Date.prototype.toStringYMD = ->
+  return moment(this).format('YYYY-MM-DD')
+@Date.prototype.toStringYMDdot = ->
+  return moment(this).format('YYYY.MM.DD')
+@Date.prototype.toStringMDHM = ->
+  return moment(this).format('MM-DD HH:mm')
+@Date.prototype.toStringMD = ->
+  return moment(this).format('MM-DD')
+@Date.prototype.toStringHMS = ->
+  return moment(this).format('HH:mm:ss')
+@Date.prototype.toStringH = ->
+  return moment(this).format('HH')
+@Date.prototype.toStringM = ->
+  return moment(this).format('mm')
+@Date.prototype.toStringHM = ->
+  return moment(this).format('HH:mm')
+@Date.prototype.toStringYMDHMS = ->
+  return moment(this).format('YYYY-MM-DD HH:mm:ss')
+@Date.prototype.toDateFromString = (_str) ->
+  return moment(_str, 'YYYY-MM-DD HH:mm:ss').toDate()
 
 Date.isLeapYear = (year) ->
   year % 4 == 0 and year % 100 != 0 or year % 400 == 0
@@ -207,28 +231,6 @@ unless @Codeasy then @Codeasy = {}
     else return _obj? and !!_obj and !!Object.keys(_obj).length
   checkArgs: (condition, args) ->
     if !condition or (do -> return true for str in args when condition.hasOwnProperty(str) is false) then throw new Meteor.Error condition, 'method arguments error'
-  getStringYMFromDate: (_date) ->
-    return moment(_date).format('YYYY-MM')
-  getStringYMDFromDate: (_date) ->
-    return moment(_date).format('YYYY-MM-DD')
-  getStringYMDdotFromDate: (_date) ->
-    return moment(_date).format('YYYY.MM.DD')
-  getStringMDHMFromDate: (_date) ->
-    return moment(_date).format('MM-DD HH:mm')
-  getStringMDFromDate: (_date) ->
-    return moment(_date).format('MM-DD')
-  getStringHMSFromDate: (_date) ->
-    return moment(_date).format('HH:mm:ss')
-  getStringHFromDate: (_date) ->
-    return moment(_date).format('HH')
-  getStringMFromDate: (_date) ->
-    return moment(_date).format('mm')
-  getStringHMFromDate: (_date) ->
-    return moment(_date).format('HH:mm')
-  getStringYMDHMSFromDate: (_date) ->
-    return moment(_date).format('YYYY-MM-DD HH:mm:ss')
-  getStringYMDHMSFromDate2: (_date) ->
-    return moment(_date).format(mDefine.timeFormatYMDHMS2)
 
 #  replaceAll: (_string, _selector, _any) ->
 #    revTest = _string.replace(/_selector/gi, _any); #selector -> regex로 변경 필요
@@ -312,10 +314,10 @@ unless @Codeasy then @Codeasy = {}
     return Object.prototype.toString.call(obj).match(/^\[object\s(.*)\]$/)[1]
 
   getStartEndOfDate: (_date) ->
-    strYMD = Codeasy.getStringYMDFromDate _date
+    strYMD = _date.toStringYMD
     return rslt =
-      startAt: Codeasy.getDateFromString(strYMD + ' 00:00:00')
-      endAt: Codeasy.getDateFromString(strYMD + ' 00:00:00').addDates(1)
+      startAt: Date.toDateFromString(strYMD + ' 00:00:00')
+      endAt: Date.toDateFromString(strYMD + ' 00:00:00').addDates(1)
 
   getObjectCounts: (_object) ->
     Object.keys(_object).length

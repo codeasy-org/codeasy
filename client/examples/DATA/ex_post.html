@@ -1,0 +1,16 @@
+<template name="ex_post">
+  {{> ex_navbar}}
+  <div id="ex_post" class="container">
+    {{#with board}}
+      <section class="jumbotron mt-4">
+        <h1 class="text-center">{{title}}</h1>
+        <div>말머리: {{type}}</div>
+        <div>작성자: {{name}}</div>
+        <div>시간: {{createdAt}}</div>
+        <div>조회수: {{readCount}}</div>
+        <div class="mt-2 text-center">{{{content}}}</div>
+      </section>
+    {{/with}}
+  </div>
+  {{> ex_footer}}
+</template>
