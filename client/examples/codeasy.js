@@ -1,8 +1,10 @@
-FlowRouter.route('/codeasy',{
-  action: function() {
-    BlazeLayout.render('codeasy');
-  }
-});
+FlowRouter.template('codeasy');
+
+// FlowRouter.route('/codeasy',{
+//   action: function() {
+//     BlazeLayout.render('codeasy');
+//   }
+// });
 
 
 Template.codeasy.onRendered(function() {
