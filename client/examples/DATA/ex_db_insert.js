@@ -1,0 +1,1 @@
+FlowRouter.template('ex_db_insert')
