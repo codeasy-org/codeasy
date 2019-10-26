@@ -1,0 +1,93 @@
+<template name="member_profile">
+  <div id="member_profile">
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>Member Profile</h2>
+        <!--        <img class="d-block mx-auto mb-4" src="/images/samples/logo.png" alt="" width="80" height="72">-->
+        <!--        <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>-->
+        <div><label for="inp-img">
+          <!--          <i class="fas fa-camera" style="font-size: 100px; text-shadow: 0 0 3px #000;"></i>-->
+          <img id="img_profile" src="/images/prlab/camera.png" alt="" class="rounded-circle img-object-fit img-bordered" width="140" height="140">
+        </label></div>
+        <div><input type="file" id="inp-img"/></div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <h4 class="mb-3">Personal Information</h4>
+          <form id="form-member-profile" class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="inp-firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="inp-lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="state">Sex</label>
+                <select class="custom-select d-block w-100" id="sel-sex" required>
+                  <option value="">Choose...</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="state">Status</label>
+                <select class="custom-select d-block w-100" id="sel-status" required>
+                  <option value="">Choose...</option>
+                  <option>Student</option>
+                  <option>Graduate</option>
+                  <option>Research</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="inp-email" placeholder="you@example.com" required>
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="inp-address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Field</label>
+              <input type="text" class="form-control" id="inp-field" placeholder="Machine learning / Graphic Analyzing ..." required>
+              <div class="invalid-feedback">
+                Please enter your main fields.
+              </div>
+            </div>
+            <hr class="mb-4">
+            <button id="btn-save" class="btn btn-primary btn-lg btn-block">Continue to save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

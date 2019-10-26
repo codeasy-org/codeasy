@@ -1,0 +1,68 @@
+<template name="members">
+  <!-- Three columns of text below the carousel -->
+
+  <div id="members" class="text-center">
+    <section class="jumbotron row">
+      <div class="container">
+        <h1 class="jumbotron-heading">Members</h1>
+        <p class="lead"><b>패턴인식 연구소는 인간에게 도움이 되는 기술을 목표로, <br>공공기관과 함께 민간 기술 분야에도 전문 인력을 양성/배출하고 있습니다.</b> </p>
+        <p>
+          <!--          <a href="#" class="btn btn-primary my-2">Main call to action</a>-->
+          {{#if user.profile.isAdmin}}
+            <a href="/member_profile" class="btn btn-secondary my-2">+ Member</a>
+          {{/if}}
+
+        </p>
+      </div>
+    </section>
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="{{professorImgage}}" alt="" class="rounded-circle img-object-fit img-bordered" width="140" height="140">
+        {{#if user.profile.isAdmin}}
+          <label for="inp-profile-img-professor">
+            <i class="fas fa-camera" style="margin-left: 5px; cursor: pointer;"></i>
+          </label>
+          <input id="inp-profile-img-professor" type="file" hidden>
+        {{/if}}
+        <h2>이의철 <small>교수</small></h2>
+        <p><a href="http://hi.smu.ac.kr">서울캠퍼스 융합공과대학 지능정보공학부 휴먼지능정보공학과</a><br><a href="mailto:eclee@smu.ac.kr">eclee@smu.ac.kr</a></p>
+        <p>Digital Image Processing, Computer Vision, Pattern Recognition, HCI, Biometrics, Forensic Science</p>
+        <p><a class="btn btn-secondary" href="https://scholar.google.co.kr/citations?user=wpy1zMoAAAAJ&hl=ko&oi=ao" role="button" target="_blank">Papers &raquo;</a></p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-8" style="text-align: left;">
+        <dl class="row" style="text-align: left;">
+          {{#each db_lees}}
+            <dt class="col-sm-3">{{period}}</dt>
+            <dd class="col-sm-9">
+              {{{title}}}
+            </dd>
+          {{/each}}
+        </dl>
+      </div>
+
+      {{#each members}}
+        <div class="col-lg-3 col-md-6">
+          <label for="inp-profile-img">
+            <img type="file" src="{{link}}" alt="" class="margin-profile rounded-circle img-object-fit img-bordered mb-3" width="140" height="140">
+            {{#if user.profile.isAdmin}}
+              <a href="#"><i class="fas fa-camera" style="margin-left: 5px;"></i></a>
+            {{/if}}
+          </label>
+          <input id="inp-profile-img" type="file" hidden>
+          <h4>{{name.lastName}} {{name.firstName}}
+            {{#if user.profile.isAdmin}}
+              <button id="btn-remove" type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            {{/if}}
+          </h4>
+          <p>{{status}}<br>
+            <a href="mailto:{{email}}">{{email}}</a><br>
+            {{field}}</p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      {{/each}}
+    </div>
+  </div><!-- /.row -->
+</template>
