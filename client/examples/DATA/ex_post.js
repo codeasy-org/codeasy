@@ -1,4 +1,4 @@
-FlowRouter.template('/ex_post/:_id');
+FlowRouter.template('/ex_post/:_id', 'ex_post');
 
 Template.ex_post.onCreated(function() {
   var _id = FlowRouter.getParam('_id')

@@ -1,4 +1,4 @@
-FlowRouter.template('/ex_posts');
+FlowRouter.template('/ex_posts', 'ex_posts');
 
 Template.ex_posts.helpers({
   boards: function() {

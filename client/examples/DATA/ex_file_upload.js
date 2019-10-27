@@ -1,4 +1,4 @@
-FlowRouter.template('/ex_file_upload');
+FlowRouter.template('/ex_file_upload', 'ex_file_upload');
 
 Template.ex_file_upload.helpers({
   contents: function() {

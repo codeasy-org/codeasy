@@ -1,7 +1,7 @@
-FlowRouter.template('/ex_dashboard');
+FlowRouter.template('/ex_dashboard', 'ex_dashboard');
 
 Template.ex_dashboard.onRendered(function() {
-  run = function () {
+  var run = function () {
     feather.replace()
 
     // Graphs
