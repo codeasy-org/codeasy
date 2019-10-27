@@ -4,6 +4,10 @@ Meteor.methods({
     // console.log(obj, b_data);
     DB_POSTS.insert(obj);
     return '성공했슴.'
+  },
+  mirror: function(obj) {
+    ///
+    return obj;
   }
 });
 
