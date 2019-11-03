@@ -1,0 +1,53 @@
+<template name="main">
+  <div id="main" class="text-center">
+
+    {{> header}}
+
+    <h1 style="margin-top: 10%;">main.html</h1>
+    <h4>Start your first page here.</h4>
+    <h1><a id="btn-count" href="#" class="btn btn-outline-primary">{{count}}</a></h1>
+  </div>
+</template>
+
+<template name="header">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand"><a href="/">Codeasy</a></h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="https://github.com/codeasy-org/codeasy">About</a>
+        <a class="nav-link" href="https://github.com/codeasy-org/codeasy/wiki">Wiki</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">UI</a>
+          <div class="dropdown-menu text-center">
+            <small>HTML/CSS Templates</small>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/ex_album">Album</a>
+            <a class="dropdown-item" href="/ex_blog">Blog</a>
+            <a class="dropdown-item" href="/ex_carousel">Carousel</a>
+            <a class="dropdown-item" href="/ex_checkout">Checkout</a>
+            <a class="dropdown-item" href="/ex_history">History</a>
+            <a class="dropdown-item" href="/ex_pricing">Pricing</a>
+            <a class="dropdown-item" href="/ex_product">Product</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">DATA</a>
+          <div class="dropdown-menu text-center">
+            <small>Client Side</small>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/ex_login_navbar">Login(Simple)</a>
+            <a class="dropdown-item" href="/ex_login_custom">Login(Custom)</a>
+            <a class="dropdown-item" href="/ex_posts">Posts</a>
+            <a class="dropdown-item" href="/ex_file_upload">File Upload</a>
+            <a class="dropdown-item" href="/ex_dashboard">Dashboard</a>
+            <div class="dropdown-divider"></div>
+            <small>Server Side</small>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/ex_meteor_methods">Server-API</a>
+            <a class="dropdown-item" href="/ex_http_methods">RESTful-API</a>
+          </div>
+        </li>
+      </nav>
+    </div>
+  </header>
+</template>
