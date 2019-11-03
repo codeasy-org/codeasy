@@ -1,4 +1,4 @@
-FlowRouter.template('codeasy');
+FlowRouter.template('/', 'codeasy');
 
 // FlowRouter.route('/codeasy',{
 //   action: function() {
