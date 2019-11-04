@@ -1,0 +1,8 @@
+- Meteor 플랫폼 설치: 윈도우/Mac/Linux 해당 OS 버전을 설치합니다.([Install Meteor](https://www.meteor.com/install))
+- Codeasy 프로젝트 다운로드/Clone: Codeasy Github에서 최신 Codeasy 프로젝트를 zip파일로 다운로드 후 압축해제 혹은 git을 이용해 clone 합니다.([Codesy Github](https://github.com/codeasy-org/codeasy))
+- Terminal을 실행합니다. (Windows의 경우 CMD 명령창)
+  - cd /프로젝트설치경로/ (프로젝트 디렉토리로 이동)
+  - meteor npm install (Node.js 패키지 설치)
+  - meteor (프로젝트 실행)
+- 엣지/크롬/사파리 등의 브라우저를 열고 http://localhost:3000 을 접속해서 프로젝트가 잘 구동 되었는지 확인합니다.
+  - Welcome 페이지가 보일 경우 정상 구동 및 개발 준비 완료
