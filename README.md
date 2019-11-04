@@ -1,4 +1,4 @@
-# Node.js 풀 오픈소스 학습 프로젝트, Codeasy / 코드이지  
+# Node.js 풀 스택 오픈소스 학습 프로젝트, Codeasy / 코드이지  
 
 [About us](https://github.com/codeasy-org/codeasy/wiki/About-us)
 
