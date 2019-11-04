@@ -1,7 +1,7 @@
 
 [About us](https://github.com/codeasy-org/codeasy/wiki/About-us)
 
-[설치 & 구동](docs/install&run.md)
+[설치 & 구동](/docs/install&run.md)
 
 [프로젝트 구조](project_structure.md)
 
