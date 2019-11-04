@@ -6,7 +6,7 @@ js의 helpers에서 전달 된 값은 template에게 전달 됩니다.
     });
 위와 같이 js측에서 helpers가 정의 된 템플릿에서는 다음과 같이 해당 데이터를 표현 할 수 있습니다.
 
-_.html file_
+_.html_
 ```html
 <template name="템플릿명">
   {{data}}
@@ -19,14 +19,14 @@ html 템플릿의 {{data}}의 위치에는 helpers의 해당 함수에서 return
 ## JSON 오브젝트 표현
 js의 helpers에서 데이터베이스를 통해 JSON 데이터를 화면에 전달 할 경우, 다음과 같이 각 데이터에 접근 가능합니다.
 
-_.js file_
+_.js_
 ```js
 Template.템플릿명.helpers({
   Post: function() { return Posts.findOne(); }
 });
 ```
 
-_.html file_
+_.html_
 ```html
 <template name="템플릿명">
   <div>{{Post.name}}</div>
@@ -39,7 +39,7 @@ Post 객체가 화면에 전달 되면 몇번이든 해당 JSON 객체의 하위
 ## 반복문, Array 데이터의 표현
 데이터베이스에서 데이터를 검색 하면 보통 Array 형태의 복수 데이터가 검색 됩니다. 
 
-_.js file_
+_.js_
 ```js    
 Template.템플릿명.helpers({
   Posts: function() { return Posts.findAll(); }
@@ -48,7 +48,7 @@ Template.템플릿명.helpers({
 
 위 코드는 js측에서 데이터베이스에 접근하여 Posts 데이터베이스의 모든 데이터를 화면에 전달 하도록 합니다.
 
-_.html file_
+_.html_
 ```html
 <template name="템플릿명">
   {{#each Posts}}
@@ -64,7 +64,7 @@ _.html file_
 ## 분기문, if ~ else ~
 또한 js에서 획득한 정보에 따라 화면을 다르게 보이게 하거나, 기능을 구분해서 표현 할 수도 있습니다.
 
-_.js file_
+_.js_
 ```js    
 Template.템플릿명.helpers({
   isAdmin: function() { 
@@ -73,7 +73,7 @@ Template.템플릿명.helpers({
 });
 ```
 
-_.html file_
+_.html_
 ```html
 <template name="템플릿명">
   {{#if isAdmin}}

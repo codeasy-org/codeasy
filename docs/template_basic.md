@@ -39,3 +39,7 @@ html 화면에서 발생한 마우스/키보드 이벤트들을 처리합니다.
 html 화면의 요소(element)들의 색상 / 크기 / 위치 등을 제어하기 위한 css 구문들이 위치 합니다. examples/ 디렉토리의 예제 화면들을 참조하거나 자신만의 css 요소들을 만들면서 학습 해 보세요.
 * less는 css의 확장으로 css와 동일한 구문을 제공합니다.
 
+##SPA (Single Page Application)
+지금까지 학습 한 main 템플릿만 사용해도 훌륭한 싱글 페이지 어플리케이션(SPA)를 만드는데 부족함이 없습니다.
+
+main.html에서 기본적인 html / css 구문을 학습하거나 혹은 프로젝트에 포함 된 예제들(/client/examples/)이나 [부트스트랩](https://getbootstrap.com/docs/4.3/examples/) 컴포넌트들을 학습하면서 나만의 첫 웹 어플리케이션 페이지를 작성 해 보세요. 
