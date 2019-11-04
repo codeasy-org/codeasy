@@ -1,18 +1,15 @@
-# Node.js 풀 스택 오픈소스 학습 프로젝트, Codeasy / 코드이지  
+# Node.js 풀 스택 오픈소스 학습 프로젝트, Codeasy(코드이지)  
 
-_본 프로젝트는 컴퓨팅 전문 지식이 부족한 일반인이나 학생들이 기본적인 기술들을 유연하게 활용해서 웹 어플리케이션을 이해하고 개발 할 수 있도록 하는데 목적이 있습니다._
+_본 프로젝트는 컴퓨팅 전문 지식이 부족한 일반인이나 학생들도 기본적인 기술들을 유연하게 활용해서 웹 어플리케이션을 이해하고 개발 할 수 있도록 하는데 목적이 있습니다._
 
-[설치 & 구동](/docs/install&run.md)
-
-[프로젝트 구조](/docs/project_structure.md)
-
-[몽고디비 기초 - 생성/조회/수정/삭제](/docs/mongodb_basic.md)
-
-[템플릿 기초 - 첫 페이지 만들기](/docs/template_basic.md)
-
-[템플릿 활용 - 템플릿에 데이터 전달](/docs/template_basic2.md)
-
-[새 페이지 만들기 - 라우팅](/docs/routing.md)
+- [설치 & 구동](/docs/install&run.md)
+  - [프로젝트 구조](/docs/project_structure.md)
+- [템플릿 기초 - 첫 페이지 만들기](/docs/template_basic.md)
+  - [HTML 기초 - 기본 요소와 속성](/docs/template_basic.md)
+  - [데이터베이스 기초 - 몽고DB 생성/조회/수정/삭제](/docs/mongodb_basic.md)
+- [템플릿 활용 - 템플릿에 데이터 전달](/docs/template_basic2.md)
+  - [CSS 기초 - 부트스트랩]
+- [새 페이지 만들기 - 라우팅](/docs/routing.md)
 
 
 ## 핵심 기술만을 사용합니다. 따라서 쉽고도 강력합니다.
