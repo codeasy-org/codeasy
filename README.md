@@ -5,7 +5,7 @@ _본 프로젝트는 컴퓨팅 전문 지식이 부족한 일반인이나 학생
 - [설치 & 구동](/docs/install&run.md)
   - [프로젝트 구조](/docs/project_structure.md)
 - [템플릿 기초 - 첫 페이지 만들기](/docs/template_basic.md)
-  - [HTML 기초 - 기본 요소와 속성](/docs/template_basic.md)
+  - [HTML 기초 - 기본 요소와 속성](/docs/html_basic.md)
   - [데이터베이스 기초 - 몽고DB 생성/조회/수정/삭제](/docs/mongodb_basic.md)
 - [템플릿 활용 - 템플릿에 데이터 전달](/docs/template_basic2.md)
   - [CSS 기초 - 부트스트랩]
