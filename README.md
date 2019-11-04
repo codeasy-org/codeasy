@@ -1,8 +1,18 @@
 # Codeasy(코드이지)는 Node.js 풀 오픈소스 학습 프로젝트 입니다. 
 웹 어플리케이션을 가장 쉽고, 빠르고 배울 수 있습니다.
-[!IMPORTANT]
-[!INCLUDE[sample include file](/docs/project_structure.md)]
+
+[About us](https://github.com/codeasy-org/codeasy/wiki/About-us)
+
+[설치 & 구동](/docs/install&run.md)
+
 [프로젝트 구조](/docs/project_structure.md)
+
+[몽고DB 기초](/docs/mongodb_basic.md)
+
+[첫 페이지 만들기(템플릿 기초)](/docs/template_basic.md)
+
+[템플릿 활용](/docs/template_basic2.md)
+
 
 
 본 프로젝트는 이제 막 웹 어플리케이션을 시작하는 초/중급의 개발자 뿐만 아니라, OS / 네트워크 등 컴퓨팅 전문 지식을 가지고 있지 않은 일반인이나 학생들 또한 기본적인 학습만으로 웹 어플리케이션을 이해하고 개발 할 수 있도록 하는데 목적을 가지고 있습니다.
