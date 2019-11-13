@@ -1,4 +1,4 @@
 FlowRouter.template('/rule', 'rule')
 
 Template.rule.helpers
-  rule: -> DB_RULE.findOne(_id: '_id').content
+  content: -> DB_POSTS.findOne(_id: 'rule')?.content
