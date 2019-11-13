@@ -32,3 +32,4 @@ underscore
 http
 cfs:http-methods
 session
+summernote:standalone
