@@ -17,20 +17,20 @@ Template.members.helpers({
   link: function() {
     return DB_FILES.findOne({_id: this.file_id}).link();
   },
-  professorImgage: function() {
-    return '/images/prlab/lee.jpg'
-    // return Meteor.users.findOne({username: 'admin'})['profile.']
+  professorImage: function() {
+    // return '/images/prlab/lee.jpg'
+    var img_id = Meteor.users.findOne({username: 'admin'})['profile']['img_id'];
+    return DB_FILES.findOne({_id: img_id}).link();
   }
 });
 
 Template.members.events({
   'change #inp-profile-img-professor': function() {
-    var fileInfo = DB_FILES.insert({   //파일 DB에 미리 저장
-      file: file
-    });
-    Meteor.users.update({username: 'admin'}, {
+    var file = $('#inp-profile-img-professor').prop('files')[0];
+    var admin = Meteor.users.findOne({username: 'admin'});
+    Meteor.users.update({_id: admin._id}, {
       $set: {
-        'profile.img_id': fileInfo.config.fileId
+        'profile.img_id': DB_FILES.insertFile(file)
       }
     })
   },
