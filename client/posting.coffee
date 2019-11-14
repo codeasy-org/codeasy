@@ -13,18 +13,18 @@ Template.posting.helpers
     type = FlowRouter.getParam('type')
     _id = FlowRouter.getParam('_id')
     switch type
-      when 'intro'
+      when 'page'
         return DB_POSTS.findOne(_id: _id)?.content
 
 
 Template.posting.events
   'click #save': ->
-    cl type = FlowRouter.getParam('type')
+    type = FlowRouter.getParam('type')
     _id = FlowRouter.getParam('_id')
     switch type
-      when 'intro'
-        cl 11
+      when 'page'
         DB_POSTS.upsert _id: _id,
           createdAt: new Date()
           type: _id
           content: $('#editor').summernote('code')
+        history.back()

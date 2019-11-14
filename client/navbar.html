@@ -7,34 +7,40 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
+<!--        <ul class="navbar-nav mr-auto">-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">음원</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+        <ul class="navbar-nav mr-auto ml-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">소리나래</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="/intro">Intro</a>
-              <a class="dropdown-item" href="/history">History</a>
+              <a class="dropdown-item" href="/intro">소개</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/rule">Rule</a>
+              <a class="dropdown-item" href="/history">발자취</a>
+              <a class="dropdown-item" href="/rule">약속</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">소식</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/intro">알림</a>
+              <a class="dropdown-item" href="/history">날적이</a>
+              <a class="dropdown-item" href="/history">모임</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">공연</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/intro">악보</a>
+              <a class="dropdown-item" href="/history">음원</a>
+              <a class="dropdown-item" href="/history">사진</a>
+              <a class="dropdown-item" href="/history">영상</a>
+            </div>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="btn btn-outline-primary" href="#">{{> loginButtons align="right"}}</a>
           </li>
