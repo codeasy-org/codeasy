@@ -1,16 +1,16 @@
 
 <template name="notice">
-  {{> ex_navbar}}
+  {{> navbar}}
   <div id="notice">
     <section class="jumbotron text-center">
       <div class="container">
-        <h1>앨범 샘플</h1>
-        <p class="lead text-muted">Something short and leading about the collection
-          below—its contents, the creator, etc. Make it short and sweet, but not too
-          short so folks don’t simply skip over it entirely.</p>
+        <h1>모두 알림</h1>
+        <p class="lead text-muted">모두가 알면 좋은 나래 소식통</p>
         <p>
-          <a href="#" class="btn btn-primary">Main call to action</a>
-          <a href="#" class="btn btn-secondary">Secondary action</a>
+          {{#if isAdmin}}
+            <a href="#" class="btn btn-primary">Main call to action</a>
+            <a href="#" class="btn btn-secondary">Secondary action</a>
+          {{/if}}
         </p>
       </div>
     </section>
@@ -164,5 +164,5 @@
       </div>
     </div>
   </div>
-  {{> ex_footer}}
+  {{> footer}}
 </template>
