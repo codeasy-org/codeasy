@@ -3,7 +3,8 @@ FlowRouter.template('/ex_posts', 'ex_posts');
 Template.ex_posts.onRendered(function() {
   $('#editor').summernote({
     popover: {},
-    minHeight: 200
+    minHeight: 200,
+    maximumImageFileSize: 1048576*10
   });
 });
 
