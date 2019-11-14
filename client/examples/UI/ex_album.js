@@ -1,5 +1,1 @@
-FlowRouter.route('/ex_album', {
-  action: function() {
-    BlazeLayout.render('ex_album');
-  }
-});
+FlowRouter.template('/ex_album', 'ex_album');

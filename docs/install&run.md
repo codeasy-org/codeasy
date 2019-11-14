@@ -1,0 +1,26 @@
+## 플랫폼 설치 / 프로젝트 실행
+
+- Node.js + MongoDB = Meteor 플랫폼 설치
+  - Windows 10
+    - Chocolatey 설치
+      - 윈도우키 메뉴에서 Power Shell 검색/실행
+      - 다음을 복사 및 붙여 넣기 실행
+        - Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    - Meteor 설치
+      - 같은 창에서 다음을 입력 및 실행 
+        - choco install meteor
+  - Mac/Linux
+    - Terminal에서 다음을 입력 합니다.
+      - curl https://install.meteor.com | sh
+  - [설치참고](https://www.meteor.com/install)
+- 프로젝트 다운로드 및 실행
+  - Github에서 최신 Codeasy 프로젝트를 zip파일로 다운로드 후 압축해제 합니다.([Github](https://github.com/codeasy-org/codeasy))
+  - Terminal을 실행합니다. (Windows의 경우 CMD 명령창)
+    - 프로젝트 디렉토리로 이동하기 위해 다음을 입력 합니다. 
+      - cd /프로젝트설치경로
+    - 프로젝트 디렉토리에서 필요한 Node.js 패키지를 설치하기 위해 다음을 입력합니다.
+      - meteor npm install
+    - 프로젝트를 실행하기 위해 다음을 입력합니다.
+      - meteor
+- 엣지/크롬/사파리 등의 브라우저를 열고 주소창에 http://localhost:3000 을 접속해서 프로젝트가 잘 구동 되었는지 확인합니다.
+  - Welcome 페이지가 보일 경우 정상 구동 및 개발 준비 완료

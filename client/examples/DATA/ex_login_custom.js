@@ -1,8 +1,4 @@
-FlowRouter.route('/ex_login_custom', {
-  action: function() {
-    BlazeLayout.render('ex_login_custom');
-  }
-});
+FlowRouter.template('/ex_login_custom', 'ex_login_custom');
 
 Template.ex_login_custom.onRendered(function() {
   // 화면 로드 시 스크린 사이즈 전체를 활용하기 위한 설정

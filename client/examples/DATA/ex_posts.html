@@ -1,0 +1,60 @@
+<template name="ex_posts">
+  {{> ex_navbar}}
+  <div id="ex_posts" class="container">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>게시판 목록 샘플</h1>
+        <p>
+        <div class="lead text-muted">게시판 글을 작성합니다.</div>
+        </p>
+        <div class="row">
+          <div class="input-group mb-3 col-md-3">
+            <input class="form-control" type="text" id="inp-type" placeholder="말머리"/>
+          </div>
+          <div class="input-group mb-3 col-md-3">
+            <input class="form-control" type="text" id="inp-name" placeholder="작성자"/>
+          </div>
+          <div class="input-group mb-3 col-md-6">
+            <input class="form-control" type="text" id="inp-title" placeholder="제목"/>
+          </div>
+
+        </div>
+        <div id="editor"></div>
+        <p>
+          <a id="btn-save" href="#" class="btn btn-primary">Add Content</a>
+          <a href="#" class="btn btn-secondary">Secondary action</a>
+        </p>
+      </div>
+    </section>
+    <div class="row">
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">말머리</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">작성일</th>
+          <th scope="col">조회</th>
+          <th scope="col">삭제</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each boards}}
+          <tr>
+            <td scope="row">{{type}}</td>
+            <td><a href="/ex_post/{{this._id}}">{{title}}</a></td>
+            <td>{{name}}</td>
+            <td>{{YMD}}<br>{{HMS}}</td>
+            <td>{{readCount}}</td>
+            <td><button id="btn-remove" class="close" style="float: left;">
+              <span aria-hidden="true">&times;</span>
+            </button></td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{> ex_footer}}
+</template>

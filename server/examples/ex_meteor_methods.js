@@ -9,7 +9,7 @@ Meteor.methods({
         }
       });
     */
-    return {  // 요청 전달 params 들을 그대로 return
+    return {  // 요청 전달 params 들을 그대로 return 하는 예
       param1: param1,
       param2: param2
     }
@@ -24,7 +24,7 @@ Meteor.methods({
         }
       });
     */
-    return DB('example').findAll({db_name: db_name}); // DB에서 db_name에 일치하는 값의 Array 반환
+    return DB('example').findAll({db_name: db_name}); // DB에서 db_name에 일치하는 값의 Array 반환하는 예
   }
 });
 
