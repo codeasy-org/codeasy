@@ -41,5 +41,14 @@ Template.members.events({
   },
   'click #lnk-profile-img': function() {
     $('#inp-hidden').click()
+  },
+
+  'change [name=inp-member-img]': function(evt, tmpl) {
+    var file = $('[id='+ this._id +']').prop('files')[0];
+    var file_id = DB_FILES.insertFile(file);
+    var member = DB_MEMBERS.findOne({_id: this._id});
+    member.file_id = file_id;
+    DB_MEMBERS.update({_id: this._id}, member);
+
   }
 });
