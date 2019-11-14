@@ -1,0 +1,2 @@
+FlowRouter.template('/notice', 'notice')
+

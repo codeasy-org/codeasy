@@ -1,9 +1,10 @@
 <template name="intro">
   <div id="intro">
     {{> navbar}}
-    <div class="container">
-      <div class="row">
-        <img src="/intro.png" alt="" style="width: 100%;">
+    <div class="container mt-3">
+      <div class="">
+        {{#if isAdmin}}<a id="a-edit" href="/posting/page/intro" style="float: right;">edit</a>{{/if}}
+        {{{content}}}
       </div>
     </div>
     {{> footer}}

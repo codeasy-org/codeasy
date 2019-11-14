@@ -1,8 +1,8 @@
 <template name="rule">
   {{> navbar}}
   <div id="rule" class="container mt-3">
-    <div class="jumbotron">
-      <a id="a-edit" href="/posting/page/rule" style="float: right;">edit</a>
+    <div class="">
+      {{#if isAdmin}}<a id="a-edit" href="/posting/page/rule" style="float: right;">edit</a>{{/if}}
       {{{content}}}
     </div>
   </div>

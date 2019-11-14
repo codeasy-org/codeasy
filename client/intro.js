@@ -1,1 +1,0 @@
-FlowRouter.template('/intro', 'intro')
