@@ -28,7 +28,7 @@ Template.ex_login_custom.helpers({
 
 Template.ex_login_custom.events({
   'click #btn-signIn': function() {
-    var email = $('#inputEmail').val();
+    var email = $('#inp-email').val();
     var password = $('#inp-password').val();
     Meteor.loginWithPassword(email, password, function(err) { //로그 오류 발생 시 처리 콜백 함수
       if (err) {
@@ -51,7 +51,7 @@ Template.ex_login_custom.events({
   },
   'click #btn-signUp': function() {
     //사용자 입력 정보 저장
-    var email = $('#inputEmail').val();
+    var email = $('#inp-email').val();
     var password = $('#inp-password').val();
     var passwordConfirm = $('#inp-passwordConfirm').val();
 

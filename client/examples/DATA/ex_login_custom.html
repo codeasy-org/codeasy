@@ -14,9 +14,9 @@
       {{else}}
         {{#if isSignUpMode}}  <!-- 회원가입모드 일 경우 -->
           <h1 class="h3 mb-3 font-weight-normal">Please sign Up</h1>
-          <input type="email" id="inputEmail" class="form-control mb-1" placeholder="Email address" required autofocus>
-          <input type="password" id="inp-password" class="form-control mb-1" placeholder="Password" required>
-          <input type="password" id="inp-passwordConfirm" class="form-control mb-1" placeholder="Password" required>
+          <input id="inp-email" type="email" class="form-control mb-1" placeholder="Email address" required autofocus>
+          <input id="inp-password" type="password" class="form-control mb-1" placeholder="Password" required>
+          <input id="inp-passwordConfirm" type="password" class="form-control mb-1" placeholder="Password" required>
           <div class="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me"> Remember me
@@ -26,8 +26,8 @@
           <button id="btn-back" class="btn btn-lg btn-primary btn-block">Back</button>
         {{else}} <!-- 회원가입모드가 아닐 경우 -->
           <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-          <input type="email" id="inputEmail" class="form-control mb-1" placeholder="Email address" required autofocus>
-          <input type="password" id="inp-password" class="form-control mb-1" placeholder="Password" required>
+          <input id="inp-email" type="email" class="form-control mb-1" placeholder="Email address" required autofocus>
+          <input id="inp-password" type="password" class="form-control mb-1" placeholder="Password" required>
           <div class="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me"> Remember me
