@@ -5,9 +5,6 @@ Template.posting.onRendered ->
     popover: {}
     minHeight: 200
     maxHeight: $( window ).height() - 300
-  Meteor.setTimeout ->
-    $('#editor').summernote('reset')
-  , 1000
 
 Template.posting.helpers
   content: ->
@@ -15,6 +12,7 @@ Template.posting.helpers
     _id = FlowRouter.getParam('_id')
     switch type
       when 'page'
+        Meteor.setTimeout -> $('#editor').summernote('reset')
         return DB_POSTS.findOne(_id: _id)?.content
 
 
