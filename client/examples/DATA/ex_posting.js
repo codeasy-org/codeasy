@@ -7,6 +7,10 @@ Template.ex_posting.onRendered(function() {
     minHeight: 200,
     maximumImageFileSize: 1048576*10
   });
+
+  Meteor.setTimeout(function() {
+    $('#editor').summernote('reset');
+  }, 1000);
 });
 
 Template.ex_posting.helpers({
