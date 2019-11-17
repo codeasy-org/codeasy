@@ -2,8 +2,9 @@ FlowRouter.template('/posting/:type/:_id', 'posting')
 
 Template.posting.onRendered ->
   $('#editor').summernote
-    popover: {},
+    popover: {}
     minHeight: 200
+    maxHeight: $( window ).height() - 300
   Meteor.setTimeout ->
     $('#editor').summernote('reset')
   , 1000
