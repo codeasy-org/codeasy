@@ -447,7 +447,6 @@ if Meteor.isClient
 else
   _.extend @Codeasy.utils,
     serverLog: ->
-      console.log('run')
       nFs = Npm.require('fs')
       logFileNm = (new moment(new Date())).format('YYYYMMDD') + '.log'
       for logKey of Object.keys(arguments)
