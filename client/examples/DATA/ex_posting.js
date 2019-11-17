@@ -9,9 +9,19 @@ Template.ex_posting.onRendered(function() {
   });
 });
 
+Template.ex_posting.helpers({
+  post: function() {
+    var _id = FlowRouter.getParam('_id');
+    if (_id !== 'newPosting') {
+      return DB_POSTS.findOne({_id: _id});
+    } else {
+      return {}
+    }
+  }
+});
+
 Template.ex_posting.events({
   'click #btn-save': function() {
-    var type = $('#inp-type').val();
     var name = $('#inp-name').val();
     var title = $('#inp-title').val();
     var html = $('#editor').summernote('code');
@@ -23,7 +33,6 @@ Template.ex_posting.events({
     if( _id === 'newPosting') {
       DB_POSTS.insert({
         createdAt: new Date(),
-        type: type,
         name: name,
         title: title,
         content: html,
@@ -31,7 +40,6 @@ Template.ex_posting.events({
       })
     } else {
       var post = DB_POSTS.findOne({_id: _id});
-      post.type = type;
       post.name = name;
       post.title = title;
       post.content = html;
@@ -39,7 +47,6 @@ Template.ex_posting.events({
     }
 
     alert('저장하였습니다.');
-    $('#inp-type').val('');
     $('#inp-name').val('');
     $('#inp-title').val('');
     $('#editor').summernote('reset');
