@@ -1,4 +1,4 @@
-FlowRouter.template('/ex_posting', 'ex_posting');
+FlowRouter.template('/ex_posting/:_id', 'ex_posting');
 
 
 Template.ex_posting.onRendered(function() {
