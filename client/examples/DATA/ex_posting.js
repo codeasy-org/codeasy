@@ -12,14 +12,15 @@ Template.ex_posting.onRendered(function() {
 Template.ex_posting.helpers({
   post: function() {
     var _id = FlowRouter.getParam('_id');
-    if (_id !== 'newPosting') {
-      Meteor.setTimeout(function() { //에디터 편집 모드를 초기화 하기 위한 트릭
-        $('#editor').summernote('reset')
-      });
-      return DB_POSTS.findOne({_id: _id});
-    } else {
-      return {}
+    if(_id === 'newPosting') {
+      return {};    //새글 작성일때는 화면에 비어있는 데이터를 제공.
     }
+
+    Meteor.setTimeout(function() { //화면 에디터에 편집 모드를 초기화 하기 위한 트릭
+      $('#editor').summernote('reset')
+    });
+
+    return DB_POSTS.findOne({_id: _id});
   }
 });
 
