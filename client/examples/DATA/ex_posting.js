@@ -7,16 +7,15 @@ Template.ex_posting.onRendered(function() {
     minHeight: 200,
     maximumImageFileSize: 1048576*10
   });
-
-  Meteor.setTimeout(function() {
-    $('#editor').summernote('reset');
-  }, 1000);
 });
 
 Template.ex_posting.helpers({
   post: function() {
     var _id = FlowRouter.getParam('_id');
     if (_id !== 'newPosting') {
+      Meteor.setTimeout(function() { //에디터 편집 모드를 초기화 하기 위한 트릭
+        $('#editor').summernote('reset')
+      });
       return DB_POSTS.findOne({_id: _id});
     } else {
       return {}
