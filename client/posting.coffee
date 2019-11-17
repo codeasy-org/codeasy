@@ -7,13 +7,14 @@ Template.posting.onRendered ->
     maxHeight: $( window ).height() - 300
 
 Template.posting.helpers
-  content: ->
+  post: ->
     type = FlowRouter.getParam('type')
     _id = FlowRouter.getParam('_id')
+    if _id is 'newPosting' then return {}
     switch type
       when 'page'
         Meteor.setTimeout -> $('#editor').summernote('reset')
-        return DB_POSTS.findOne(_id: _id)?.content
+        return POSTS.findOne(_id: _id)?
 
 
 Template.posting.events
@@ -22,7 +23,7 @@ Template.posting.events
     _id = FlowRouter.getParam('_id')
     switch type
       when 'page'
-        DB_POSTS.upsert _id: _id,
+        POSTS.upsert _id: _id,
           createdAt: new Date()
           type: _id
           content: $('#editor').summernote('code')

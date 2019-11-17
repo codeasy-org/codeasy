@@ -1,2 +1,1 @@
-@DB_INTRO = new Mongo.Collection('intro');
-@DB_POSTS = new Mongo.Collection('posts');
+@POSTS = new Mongo.Collection('sorinarae_posts');
