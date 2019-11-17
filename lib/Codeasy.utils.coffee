@@ -47,12 +47,11 @@ Object.defineProperty global, '__function', get: ->
 @cl = (msg) ->
   if Meteor.isClient
 #    return msg
-    console.log msg
+    console.log.apply(null, arguments)
     try Meteor.call 'console.log', msg catch err #send server if possible
   else
-    console.log msg
+    console.log.apply(null, arguments)
 #    Codeasy.utils.serverLog msg
-    return msg
 
 # Date prototyping
 @Date.prototype.addSeconds = (s) ->

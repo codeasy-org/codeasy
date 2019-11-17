@@ -1,5 +1,1 @@
-FlowRouter.route('/ex_blog', {
-  action: function() {
-    BlazeLayout.render('ex_blog');
-  }
-});
+FlowRouter.template('/ex_blog', 'ex_blog');

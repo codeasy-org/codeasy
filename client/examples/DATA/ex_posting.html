@@ -1,0 +1,27 @@
+<template name="ex_posting">
+  <div id="ex_posting">
+    <section class="jumbotron" style="background-color: white;">
+      <div class="container">
+        <h1 class="text-center">게시판 목록 샘플</h1>
+        <p>
+        <div class="lead text-muted text-center">게시판 글을 작성 / 수정합니다.<br>ex_posting 템플릿 하나에서 새글 작성과 기존 글 수정을 동시에 할 수 있도록 구성 되어 있습니다. <br>자세한 내용은 JS 파일을 참고 해 주세요.</div>
+        </p>
+        {{#with post}}
+          <div class="row text-center">
+            <div class="input-group mb-3 col-md-3">
+              <input class="form-control" value="{{name}}" type="text" id="inp-name" placeholder="작성자"/>
+            </div>
+            <div class="input-group mb-3 col-md-9">
+              <input class="form-control" value="{{title}}" type="text" id="inp-title" placeholder="제목"/>
+            </div>
+          </div>
+          <div id="editor">{{{content}}}</div>
+        {{/with}}
+        <p>
+          <a id="btn-save" href="#" class="btn btn-primary">Add Content</a>
+          <a href="#" class="btn btn-secondary">Secondary action</a>
+        </p>
+      </div>
+    </section>
+  </div>
+</template>
