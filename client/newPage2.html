@@ -1,0 +1,16 @@
+<template name="newPage2">
+  <div class="text-center">
+    {{> header}}
+    <!--    1.인풋박스 1개와 저장 버튼 -->
+    <input id="inp-keyword" type="text">
+    <button id="btn-save">키워드 저장</button>
+
+    <!--   2. 저장 된 전공 명을 테이블에 1줄씩 표시 -->
+    <ul>
+      {{#each keywords}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+
+  </div>
+</template>
