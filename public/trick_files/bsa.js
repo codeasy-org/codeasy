@@ -146,7 +146,7 @@ var _bsap = {
       var empty = 0, exec = [], c = (!zf || !zf.ads || !zf.ads.length) ? [] : bsa.getads(zf, z.nads), d, e = c[0],
       t = '', o = '', fr, a, backfilled = false, tf = z.format ? z.format : (z.type && z.type == 1 ? 2 : 0),
       ts = Math.round(+new Date() / 1000), w = z.width, h = z.height, css = function (x) {
-        var newel = document.createElement('style');
+        var newel = document.createElement('style.scss');
         newel.type = 'text\/css';
         newel.id = 'bsa_css';
         var ie6 = newel.styleSheet ? typeof (newel.styleSheet.cssText) == 'unknown' : false,

@@ -33,3 +33,4 @@ http
 cfs:http-methods
 session
 summernote:standalone
+fourseven:scss
