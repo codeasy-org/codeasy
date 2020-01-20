@@ -6,7 +6,7 @@
         <h1>게시판 샘플</h1>
         <p class="lead text-muted">게시판 작성 버튼으로 게시판을 작성 할 수 있는 페이지로 이동 합니다. <br>로그인 된 사용자만 게시판을 지울 수 있도록 하려면 <br>ex_login_navbar 혹은 ex_login_custom 예제를 참고 하세요.</p>
         <p>
-          <a href="/ex_posting/newPosting" class="btn btn-primary">게시판 작성</a>
+          <a href="/home_posting/newPosting" class="btn btn-primary">게시판 작성</a>
         </p>
       </div>
     </section>
@@ -24,7 +24,7 @@
         <tbody>
         {{#each boards}}
           <tr>
-            <td><a href="/ex_post/{{_id}}">{{title}}</a></td>
+            <td><a href="/home_post/{{_id}}">{{title}}</a></td>
             <td>{{name}}</td>
             <td>{{YMD}}<br><span class="d-none d-lg-block">{{HMS}}</span></td>
             <td class="d-none d-lg-block">{{readCount}}</td>
