@@ -1,6 +1,9 @@
 FlowRouter.template('/ex_file_upload', 'ex_file_upload');
 
 Template.ex_file_upload.helpers({
+  merong: function() {
+    alert('그리고 잇다.')
+  },
   contents: function() {
     // CONTENTS 데이터베이스를 화면에 전달
     return DB_UPLOAD.findAll();
