@@ -3,12 +3,10 @@
     <div class="form">
       <a href="/codeasy"><img class="mb-4" src="/examples/logo.png" alt="" width="80" height="72"></a>
       {{#if currentUser}}
-        {{#with userInfo}}
-          <h1 class="h3 mb-3 font-weight-normal">{{email}} <br> has been logged in.</h1>
-          <input id="inp-name" type="text" class="form-control mb-1" placeholder="Name" value="{{profile.name}}">
-          <input id="inp-address" type="text" class="form-control mb-1" placeholder="Address" value="{{profile.address}}">
-          <input id="inp-mobile" type="text" class="form-control mb-3" placeholder="Phone" value="{{profile.mobile}}">
-        {{/with}}
+        <h1 class="h3 mb-3 font-weight-normal">{{currentUser.email}} <br> has been logged in.</h1>
+        <input id="inp-name" type="text" class="form-control mb-1" placeholder="Name" value="{{currentUser.profile.name}}">
+        <input id="inp-address" type="text" class="form-control mb-1" placeholder="Address" value="{{currentUser.profile.address}}">
+        <input id="inp-mobile" type="text" class="form-control mb-3" placeholder="Phone" value="{{currentUser.profile.mobile}}">
         <button id="btn-update-profile" class="btn btn-outline-primary btn-lg btn-block mb-1">Update Profile</button>
         <button id="btn-logout" class="btn btn-lg btn-primary btn-block">Sign out</button>
       {{else}}

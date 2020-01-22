@@ -39,37 +39,35 @@
     <section class="jumbotron text-center">
       {{#if currentUser}}
         <div class="container">
-          {{#with userInfo}}
-            <p><h1>{{emails.[0].address}}</h1></p>
-            <p><h4>loginButtons 템플릿 버튼만 적용하면 즉시 로그인 기능이 사용 가능 합니다.</h4></p>
-            <p>아래 정보를 입력 하면 현재 로그인 된 사용자의 정보를 DB에 추가/수정합니다.</p>
-            <div class="row">
-              <div class="col-lg-3 col-md-2 col-sm-1"></div>
-              <div class="col-lg-6 col-md-8 col-sm-10">
-                <div class="input-group mb-1">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Username</span>
-                  </div>
-                  <input id="inp-name" type="text" class="form-control" placeholder="ex> John Doe" value="{{username}}">
+          <p><h1>{{currentUser.emails.[0].address}}</h1></p>
+          <p><h4>loginButtons 템플릿 버튼만 적용하면 즉시 로그인 기능이 사용 가능 합니다.</h4></p>
+          <p>아래 정보를 입력 하면 현재 로그인 된 사용자의 정보를 DB에 추가/수정합니다.</p>
+          <div class="row">
+            <div class="col-lg-3 col-md-2 col-sm-1"></div>
+            <div class="col-lg-6 col-md-8 col-sm-10">
+              <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Username</span>
                 </div>
-                <div class="input-group mb-1">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Address</span>
-                  </div>
-                  <input id="inp-address" type="text" class="form-control" placeholder="ex> 123 Street, Seoul, Korea" value="{{profile.address}}">
-                </div>
-                <div class="input-group mb-1">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Phone</span>
-                  </div>
-                  <input id="inp-mobile" type="text" class="form-control" placeholder="ex> 010-1234-5678" value="{{profile.mobile}}">
-                </div>
-                <button id="btn-update-profile" class="btn btn-primary btn-lg btn-block">Update Profile</button>
+                <input id="inp-name" type="text" class="form-control" placeholder="ex> John Doe" value="{{currentUser.username}}">
               </div>
-              <div class="col-lg-3 col-md-2 col-sm-1"></div>
-
+              <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Address</span>
+                </div>
+                <input id="inp-address" type="text" class="form-control" placeholder="ex> 123 Street, Seoul, Korea" value="{{currentUser.profile.address}}">
+              </div>
+              <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Phone</span>
+                </div>
+                <input id="inp-mobile" type="text" class="form-control" placeholder="ex> 010-1234-5678" value="{{currentUser.profile.mobile}}">
+              </div>
+              <button id="btn-update-profile" class="btn btn-primary btn-lg btn-block">Update Profile</button>
             </div>
-          {{/with}}
+            <div class="col-lg-3 col-md-2 col-sm-1"></div>
+
+          </div>
         </div>
       {{else}}
         <p><h3>우측 상단의 Sign in 버튼을 통해 회원 가입 / 로그인 / 로그아웃이 가능합니다.</h3></p>

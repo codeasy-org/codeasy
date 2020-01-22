@@ -20,9 +20,6 @@ Template.ex_login_custom.helpers({
   },
   isSignUpMode: function() {
     return Session.get('isSignUpMode'); //화면을 회원가입 모드로 변경/복구
-  },
-  userInfo: function() {
-    return Meteor.user();
   }
 });
 

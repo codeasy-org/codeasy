@@ -1,9 +1,6 @@
 FlowRouter.template('/ex_login_navbar', 'ex_login_navbar');
 
 Template.ex_login_navbar.helpers({
-  userInfo: function() {
-    return Meteor.user();
-  }
 });
 
 Template.ex_login_navbar.events({
