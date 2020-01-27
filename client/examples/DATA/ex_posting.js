@@ -25,7 +25,8 @@ Template.ex_posting.helpers({
 });
 
 Template.ex_posting.events({
-  'click #btn-save': function() {
+  'click #btn-save': function(evt, inst) {
+    evt.preventDefault();
     var name = $('#inp-name').val();
     var title = $('#inp-title').val();
     var html = $('#editor').summernote('code');
