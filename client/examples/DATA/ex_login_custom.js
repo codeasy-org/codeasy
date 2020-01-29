@@ -55,7 +55,12 @@ Template.ex_login_custom.events({
     if(password == passwordConfirm) { // 비밀번호와 확인이 동일하게 입력 되었는지 확인
       Accounts.createUser({ //사용자 생성 함수
         email: email,
-        password: password
+        password: password,
+        profile: {
+          원하는: '추가데이터',
+          성별: '남자',
+          나이: 30
+        }
       }, function(err) { //사용자 생성 오류 시 처리 콜백 함수
         if (err) {
           alert(err);
@@ -79,6 +84,9 @@ Template.ex_login_custom.events({
         'profile.mobile': mobile
       }
     });
+    //Meteor.users는 DB
+    //Meteor.users.findAll({}, {})
+    //Meteor.users.findOne({}, {})
 
     alert('사용자 프로파일을 수정 하였습니다.');
   }

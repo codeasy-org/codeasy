@@ -79,5 +79,8 @@ Template.main.events({
   'click #btn-more': function() {
     var tmp = Session.get('page_count')+10; //설정 된 값보다 10 늘려서
     Session.set('page_count', tmp);     //재 설정
+  },
+  'click #logout': function() {
+    Meteor.logout()
   }
 });

@@ -3,7 +3,7 @@
     <div class="form">
       <a href="/codeasy"><img class="mb-4" src="/examples/logo.png" alt="" width="80" height="72"></a>
       {{#if currentUser}}
-        <h1 class="h3 mb-3 font-weight-normal">{{currentUser.email}} <br> has been logged in.</h1>
+        <h1 class="h3 mb-3 font-weight-normal">{{currentUser.emails.[0].address}} <br> has been logged in.</h1>
         <input id="inp-name" type="text" class="form-control mb-1" placeholder="Name" value="{{currentUser.profile.name}}">
         <input id="inp-address" type="text" class="form-control mb-1" placeholder="Address" value="{{currentUser.profile.address}}">
         <input id="inp-mobile" type="text" class="form-control mb-3" placeholder="Phone" value="{{currentUser.profile.mobile}}">

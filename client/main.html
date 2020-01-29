@@ -2,7 +2,13 @@
   <div id="main" class="text-center">
 
     {{> header}}
+    {{#if currentUser}}
+    <button id="logout">logout</button>
+    {{else}}
+      로그아웃 버튼은 로그인 했을때만 보임.
+    {{/if}}
 
+    {{#if currentUser}}
     <table class="table">
       <thead>
       <tr>
@@ -30,7 +36,9 @@
       </tr>
       </tbody>
     </table>
-
+    {{else}}
+      <div>로그인 해야 테이블을 볼 수 있음. 로그인 해주세요.</div>
+    {{/if}}
 
 
     <h1 style="margin-top: 10%;">main.html</h1>
