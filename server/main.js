@@ -10,14 +10,14 @@ Meteor.startup(function() {
   //   keyword: 키워드
   // }
 
-  var arr = DB_KEYWORD.findAll()
-  arr.forEach(function(keyword){
-    DB_KEYWORD.update({_id: keyword._id}, {
-      $set: {
-        keyword: keyword._id
-      }
-    })
-  })
+  // var arr = DB_KEYWORD.findAll()
+  // arr.forEach(function(keyword){
+  //   DB_KEYWORD.update({_id: keyword._id}, {
+  //     $set: {
+  //       keyword: keyword._id
+  //     }
+  //   })
+  // })
 
 
   // code to run on server at startup
