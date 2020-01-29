@@ -6,7 +6,7 @@ Template.ex_dashboard2_keyword.onRendered ->
   , 1000
 
 Template.ex_dashboard2_keyword.helpers
-  major: ->
+  keywords: ->
     return DB_KEYWORD.find(major: FlowRouter.getParam('_id'))
   major_name: ->
     return FlowRouter.getParam('_id')
@@ -14,8 +14,8 @@ Template.ex_dashboard2_keyword.helpers
 Template.ex_dashboard2_keyword.events
   'click #btn-register': (evt, inst) ->
     if confirm('키워드를 등록 하시겠습니까?')
-      DB_KEYWORD.upsert _id: $('#inp-major').val(),
-        _id: $('#inp-major').val()
+      DB_KEYWORD.insert
+        keyword: $('#inp-major').val()
         major: FlowRouter.getParam('_id')
       $('#inp-major').val('')
   'click #btn-remove': ->
