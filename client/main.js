@@ -3,6 +3,7 @@ FlowRouter.template('/', 'main');
 Template.main.onRendered(function() {
   // 화면이 그려지고 난 후 제일 먼저 수행
   Session.set('count', 0);
+  Session.set('page_count', 10); //최초 보여줄 갯수 셋팅
 });
 
 Template.main.helpers({
@@ -54,9 +55,15 @@ Template.main.helpers({
     // return DB_TRAVEL.findAll({지역: '서울', 태그: '봄', 조회수: 0});
 
     // return DB_TRAVEL.findAll({},{}); //조관과 옵션 검색
-    // return DB_TRAVEL.findAll({},{sort: {조회수: true}}); //조회수 정방향 정렬
+    // return DB_TRAVEL.findAll({},{sort: {조회수: true, createdAt: true}}); //조회수 정방향 정렬
     // return DB_TRAVEL.findAll({지역: '서울', 태그: '봄'},{sort: {조회수: true}}); //조건별 조회수 정방향 정렬
-    return DB_TRAVEL.findAll({}, {limit: 30});
+
+    // return DB_TRAVEL.findAll({조회수: {$gt: 50, $lt: 90}}); //크기비교
+    //크기비교 연산자 4개(< > <= >=): $gt(큰것) $gte(크거나 같은것) $lt(작은것) $lte(작거나 같은것)
+
+
+    //더보기 누른 만큼 갯수 보여주기
+    return DB_TRAVEL.findAll({}, {limit: Session.get('page_count')});
   },
   createdAt: function() {
     return this.createdAt.toStringYMDHMS();
@@ -68,5 +75,9 @@ Template.main.events({
   // 화면의 이벤트를 처리
   'click #btn-count': function() {
     Session.set('count', Session.get('count')+1);
+  },
+  'click #btn-more': function() {
+    var tmp = Session.get('page_count')+10; //설정 된 값보다 10 늘려서
+    Session.set('page_count', tmp);     //재 설정
   }
 });
