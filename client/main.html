@@ -3,6 +3,33 @@
 
     {{> header}}
 
+    <table class="table">
+      <thead>
+      <tr>
+        <td>작성일시</td>
+        <td>제목</td>
+        <td>본문</td>
+        <td>지역</td>
+        <td>태그</td>
+        <td>조회수</td>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each travels}}
+        <tr>
+          <td>{{createdAt}}</td>
+          <td>{{제목}}</td>
+          <td>{{본문}}</td>
+          <td>{{지역}}</td>
+          <td>{{태그}}</td>
+          <td>{{조회수}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+
+
+
     <h1 style="margin-top: 10%;">main.html</h1>
     <h4>Start your first page here.</h4>
     <h1><a id="btn-count" href="#" class="btn btn-outline-primary">{{count}}</a></h1>
