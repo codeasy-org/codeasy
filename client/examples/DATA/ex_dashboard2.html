@@ -1,0 +1,129 @@
+<template name="ex_dashboard2">
+  <id id="ex_dashboard">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/ex_dashboard">상명대 로보어드바이저</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="/ex_dashboard">
+                  <span data-feather="home"></span>
+                  대시보드 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="file"></span>
+                  연계전공관리
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="activity"></span>
+                  그래프분석
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  사용자관리
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  연계전공통계
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  연계전공분석
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Current month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Last quarter
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <h2 class="mb-3 mt-3">전공등록</h2>
+          <div class="input-group col-md-6 mb-5">
+            <input id="inp-major" type="text" class="form-control" placeholder="연계/융합 전공명">
+            <div class="input-group-append">
+              <button id="btn-register" class="btn btn-primary">등록</button>
+            </div>
+          </div>
+          <h2>전공리스트</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th style="width: 50%;">전공명</th>
+                <th>키워드수</th>
+                <th>이용자수</th>
+                <th style="width: 10%;">삭제</th>
+              </tr>
+              </thead>
+              <tbody>
+              {{#each major}}
+                <tr>
+                  <td>-</td>
+                  <td><a href="/ex_dashboard2_keyword/{{_id}}">{{_id}}</a></td>
+                  <td>{{keyword_count}}</td>
+                  <td>0</td>
+                  <td><button id="btn-remove" class="btn btn-danger">삭제</button></td>
+                </tr>
+              {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </id>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</template>

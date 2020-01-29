@@ -13,5 +13,11 @@ Meteor.startup(function() {
       }
     });
   }
+  Meteor.methods({
+    'remove_keywords': function(major) {
+      DB_KEYWORD.remove({major: major});
+    }
+  })
+
 });
 
