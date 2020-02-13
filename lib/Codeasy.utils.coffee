@@ -147,16 +147,6 @@ Date.prototype.clone = -> return new Date @getTime()
 @throwError = (err) ->
   Meteor.call 'throwError', err #err object or string for message
 
-## below is trash
-#  closed_reasons: [
-#    {code: '00', title: '전체'}
-#    {code: '01', title: '해결완료'}
-#    {code: '02', title: '고객미응답'}
-#    {code: '03', title: '대기중종료'}
-#    {code: '04', title: '상담원연결지연'}
-#    {code: '05', title: '상담원미응답'}
-#  ]
-
 unless @Codeasy then @Codeasy = {}
 
 @Codeasy.utils =
@@ -314,9 +304,10 @@ unless @Codeasy then @Codeasy = {}
 
   getStartEndOfDate: (_date) ->
     strYMD = _date.toStringYMD
-    return rslt =
+    return {
       startAt: Date.toDateFromString(strYMD + ' 00:00:00')
       endAt: Date.toDateFromString(strYMD + ' 00:00:00').addDates(1)
+    }
 
   getObjectCounts: (_object) ->
     Object.keys(_object).length
