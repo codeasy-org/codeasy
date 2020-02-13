@@ -3,6 +3,12 @@
 
     {{> header}}
 
+    <input id="inp-tag" type="text"><button id="btn-save">태그등록</button>
+    {{#each tags}}
+      <span style="background-color: gray;">{{name}}<button id="btn-remove">X</button></span>
+    {{/each}}
+    <button id="btn-save-post">글등록</button>
+
     <h1 style="margin-top: 10%;">main.html</h1>
     <h4>Start your first page here.</h4>
     <h1><a id="btn-count" href="#" class="btn btn-outline-primary">{{count}}</a></h1>
