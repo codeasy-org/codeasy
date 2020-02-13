@@ -10,6 +10,14 @@
         <div>시간: {{createdAt}}</div>
         <div>조회수: {{readCount}}</div>
       </section>
+
+      <input type="text" id="inp-comment">
+      <button id="btn-comment-save">comment</button>
+
+      {{#each comments}}
+        <div>{{comment}} / {{writer}} / {{aaa}}</div>
+      {{/each}}
+
       <div style="border-radius: 25px; border: 2px solid rgba(128,128,128,0.71); padding: 20px;">
         <div class="mt-2">{{{content}}}</div>
       </div>
