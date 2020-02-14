@@ -3,13 +3,13 @@ FlowRouter.template('/', 'main');
 Template.main.onRendered(function() {
   // 화면이 그려지고 난 후 제일 먼저 수행
   Session.set('count', 0);
-  Session.set('tags', [])
+  Session.set('tags', '')
 });
 
 Template.main.helpers({
   // 화면에 데이터를 전달
   tags: function() {
-    return DB_TAGS.findAll();
+    return DB_TAGS.findAll({name: Session.get('tags')});
   },
   count: function() {
     var count = Session.get('count');
@@ -23,10 +23,15 @@ Template.main.helpers({
 
 Template.main.events({
   // 화면의 이벤트를 처리
-  'click #btn-save': function() {
-    var tags = Session.get('tags');
-    tags.push($('#inp-tag').val());
-    Session.set('tags', tags);
+  'keyup #inp-tag': function(evt) {
+    if(evt.which === 13) {
+      Session.set('tags', $('#inp-tag').val())
+    }
+    // var tags = Session.get('tags');
+    // tags.push($('#inp-tag').val());
+    // Session.set('tags', tags);
+
+
     // DB_TAGS.insert({
     //   createdAt: new Date(),
     //   name: $('#inp-tag').val()
