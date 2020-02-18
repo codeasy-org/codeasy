@@ -19,6 +19,7 @@
           <th scope="col">작성일</th>
           <th scope="col" class="d-none d-lg-block">조회</th>
           <th scope="col">삭제</th>
+          <th>좋아요</th>
         </tr>
         </thead>
         <tbody>
@@ -28,9 +29,10 @@
             <td>{{name}}</td>
             <td>{{YMD}}<br><span class="d-none d-lg-block">{{HMS}}</span></td>
             <td class="d-none d-lg-block">{{readCount}}</td>
-            <td><button id="btn-remove" class="close" style="float: left;">
+              <td><button id="btn-remove" class="close" style="float: left;">
               <span aria-hidden="true">&times;</span>
             </button></td>
+            <td><button id="btn-like" count="{{count}}">좋아요 {{like}}</button></td>
           </tr>
         {{/each}}
         </tbody>

@@ -21,5 +21,9 @@ Template.main.events({
   // 화면의 이벤트를 처리
   'click #btn-count': function() {
     Session.set('count', Session.get('count')+1);
-  }
+  },
+  'click small': function() {
+    alert('h4 clicked')
+  },
+
 });
