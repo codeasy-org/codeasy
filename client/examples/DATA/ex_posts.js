@@ -20,6 +20,8 @@ Template.ex_posts.events({
   'click #btn-remove': function() {
     if(confirm('삭제 하시겠습니까?')) {
       DB_POSTS.remove({_id: this._id});
+      DB_POSTS.findAll()
+
       alert('삭제 되었습니다.');
     }
   }
