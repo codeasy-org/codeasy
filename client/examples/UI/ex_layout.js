@@ -1,1 +1,1 @@
-FlowRouter.template('/ex_layout', 'ex_layout');
+FlowRouter.template('/ex_layout', 'ex_layout', {name: 'ex_layout_subpage'});

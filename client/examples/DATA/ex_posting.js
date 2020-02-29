@@ -3,7 +3,7 @@ FlowRouter.template('/ex_posting/:_id', 'ex_posting');
 
 Template.ex_posting.onRendered(function() {
   $('#editor').summernote({
-    popover: {},
+    // popover: {},
     minHeight: 200,
     maximumImageFileSize: 1048576*10,
     callbacks: {
